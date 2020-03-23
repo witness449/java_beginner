@@ -12,4 +12,48 @@ package io.dima.javabeginner.domain;
  */
 public class Card {
     
+    private String title, description, columnName;
+    private User assignee, creator;
+    private Column column;
+     
+    public Card (String title, User creator, Column column)
+    {
+        this.title = title;
+        this.creator=creator;
+        this.column=column;
+        
+        columnName=this.column.Get(); 
+        
+        System.out.println ("User "+ this.creator+" created a card "+this.title+" in column "+columnName);
+        
+    }
+    
+    public void assignTo (User assignee)
+    {
+        this.assignee=assignee;
+        
+        System.out.println ("Card "+this.title+" was assigned to "+this.assignee);
+        
+    }
+    
+    public void moveTo (Column column)
+    {
+        this.column=column;
+        
+        columnName=this.column.Get();
+        
+         System.out.println ("Card "+this.title+" was moved to "+columnName);
+    }
+    
+    public void setDescription (String Description)
+    {
+        this.description=Description;
+        
+        System.out.println ("Card "+this.title+" was given a description "+ this.description);
+        
+    }
+    
+    
+    
+    
 }

@@ -12,4 +12,32 @@ package io.dima.javabeginner.domain;
  */
 public class User {
     
+       private String email, firstName, lastName;
+
+    public User(String email) {
+        this.email = email;
+    }
+
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
+    }
+
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
+    }
+    
+    public String getName()
+    {
+        String tmp=this.firstName+" "+this.lastName;
+        return tmp;
+    }
+
+    @Override 
+    public String toString() {
+        return email;
+    }
+    
+    
+    
+    
 }

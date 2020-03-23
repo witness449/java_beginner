@@ -12,4 +12,17 @@ package io.dima.javabeginner.domain;
  */
 public class Column {
     
+    
+      private String name;
+
+    public Column (String name) {
+        this.name = name;
+    }
+    
+    public String Get ()
+    {
+        String name=this.name;
+        return name;
+    }
+    
 }
