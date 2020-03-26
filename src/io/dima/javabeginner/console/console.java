@@ -18,39 +18,35 @@ import java.util.Scanner;
 public class console {
     
     
-    public static void main(String[] args)
-    {
+    public static void main(String[] args) {
         Scanner sc=new Scanner(System.in);
         System.out.println ("First, log in!");
         System.out.print ("E-mail: ");
-        String user_email=sc.nextLine();
-        User user=new User(user_email);
+        String userEmail=sc.nextLine();
+        User user=new User(userEmail);
         System.out.print ("First name: ");
-        String user_firstname=sc.nextLine();
-        user.setFirstName(user_firstname);
+        String userFirstname=sc.nextLine();
+        user.setFirstName(userFirstname);
         System.out.print ("Last name: ");
-        String user_lastname=sc.nextLine();
-        user.setLastName(user_lastname);
+        String userLastname=sc.nextLine();
+        user.setLastName(userLastname);
         System.out.println ("Hello "+user.getName()+", now you can create task.");
         System.out.print ("Title: ");
         String title=sc.nextLine();
         System.out.print ("Column: ");
         String column=sc.nextLine();
-        Column card_column=new Column (column);
-        Card crd=new Card(title, user, card_column);
+        Column cardColumn=new Column (column);
+        Card crd=new Card(title, user, cardColumn);
         System.out.println ("You just created a card. Assign it to your friend");
-        
-        
         System.out.print ("E-mail: ");
-        String friend_email=sc.nextLine();
-        User friend = new User (friend_email);
+        String friendEmail=sc.nextLine();
+        User friend = new User (friendEmail);
         System.out.print ("First name: ");
-        String friend_firstname=sc.nextLine();
-        friend.setFirstName(friend_firstname);
+        String friendFirstname=sc.nextLine();
+        friend.setFirstName(friendFirstname);
         System.out.print ("Last name: ");
-        String friend_lastname=sc.nextLine();
-        friend.setLastName(friend_lastname);
-             
+        String friendLastname=sc.nextLine();
+        friend.setLastName(friendLastname);
         crd.assignTo(friend);
         
         

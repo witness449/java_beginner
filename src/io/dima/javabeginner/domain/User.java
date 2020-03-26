@@ -12,7 +12,7 @@ package io.dima.javabeginner.domain;
  */
 public class User {
     
-       private String email, firstName, lastName;
+    private String email, firstName, lastName;
 
     public User(String email) {
         this.email = email;
@@ -26,10 +26,8 @@ public class User {
         this.lastName = lastName;
     }
     
-    public String getName()
-    {
-        String tmp=this.firstName+" "+this.lastName;
-        return tmp;
+    public String getName(){
+        return this.firstName+" "+this.lastName;
     }
 
     @Override 
