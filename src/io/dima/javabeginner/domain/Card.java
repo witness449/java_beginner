@@ -15,16 +15,11 @@ public class Card {
     private String title, description;
     private User assignee, creator;
     private Column column;
-     
     public Card (String title, User creator, Column column) {
         this.title = title;
         this.creator=creator;
         this.column=column;
-        
-         
-        
         System.out.println ("User "+ this.creator+" created a card "+this.title+" in column "+this.column.getName());
-        
     }
     
     public void assignTo (User assignee){
@@ -43,8 +38,4 @@ public class Card {
         System.out.println ("Card "+this.title+" was given a description "+ this.description);
         
     }
-    
-    
-    
-    
 }

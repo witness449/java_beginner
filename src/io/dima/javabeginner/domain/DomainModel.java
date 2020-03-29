@@ -10,7 +10,7 @@ package io.dima.javabeginner.domain;
  *
  * @author Дмитрий
  */
-public class Domain_model {
+public class DomainModel {
     
     public static void main(String[] args){
         Column todo = new Column("TODO"),
