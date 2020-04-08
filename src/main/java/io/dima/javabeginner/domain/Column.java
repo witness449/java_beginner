@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 
-package main.java.io.dima.javabeginner.domain;
+package io.dima.javabeginner.domain;
 
 /**
  *

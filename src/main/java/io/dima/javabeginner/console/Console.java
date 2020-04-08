@@ -4,11 +4,11 @@
  * and open the template in the editor.
  */
 
-package main.java.io.dima.javabeginner.console;
+package io.dima.javabeginner.console;
 
-import main.java.io.dima.javabeginner.domain.Card;
-import main.java.io.dima.javabeginner.domain.Column;
-import main.java.io.dima.javabeginner.domain.User;
+import io.dima.javabeginner.domain.Card;
+import io.dima.javabeginner.domain.Column;
+import io.dima.javabeginner.domain.User;
 import java.util.Scanner;
 
 /**

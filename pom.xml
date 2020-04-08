@@ -45,7 +45,7 @@
           <archive>
             <manifest>
               <addClasspath>true</addClasspath>
-              <mainClass>main.java.io.dima.javabeginner.domain.DomainModel</mainClass>
+              <mainClass>io.dima.javabeginner.domain.DomainModel</mainClass>
             </manifest>
           </archive>
         </configuration>
@@ -58,7 +58,7 @@
           <archive>
             <manifest>
               <addClasspath>true</addClasspath>
-              <mainClass>main.java.io.dima.javabeginner.domain.DomainModel</mainClass>
+              <mainClass>io.dima.javabeginner.domain.DomainModel</mainClass>
             </manifest>
           </archive>
           <descriptorRefs>
