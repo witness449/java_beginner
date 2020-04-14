@@ -1,0 +1,8 @@
+22:22:53.519 [main] INFO  io.dima.javabeginner.domain.Card - User [project_manager@email.com] created a crad[Task #1] in column [TODO]
+22:22:53.534 [main] INFO  io.dima.javabeginner.domain.Card - Card [Task #1] was assigned to [developer@email.com]
+22:22:53.534 [main] INFO  io.dima.javabeginner.domain.Card - Card [Task #1] was moved to [In Progress]
+22:22:53.534 [main] INFO  io.dima.javabeginner.domain.Card - User [project_manager@email.com] created a crad[Task #2] in column [TODO]
+22:22:53.534 [main] INFO  io.dima.javabeginner.domain.Card - Card [Task #2] was assigned to [developer@email.com]
+22:22:53.534 [main] INFO  io.dima.javabeginner.domain.Card - Card [Task #2] was given a description [Won't fix it, created by mistake]
+22:22:53.534 [main] INFO  io.dima.javabeginner.domain.Card - Card [Task #2] was moved to [Done]
+22:22:53.534 [main] INFO  io.dima.javabeginner.domain.Card - Card [Task #2] was assigned to [project_manager@email.com]

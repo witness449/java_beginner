@@ -7,32 +7,26 @@
   <artifactId>io.dima.javabeginner</artifactId>
   <version>1.0</version>
   <dependencies>
-  <!-- https://mvnrepository.com/artifact/ch.qos.logback/logback-classic -->
-  <dependency>
-      <groupId>ch.qos.logback</groupId>
-      <artifactId>logback-classic</artifactId>
-      <version>1.2.3</version>
-      <scope>test</scope>
-  </dependency>
-  <!-- https://mvnrepository.com/artifact/ch.qos.logback/logback-core -->
-  <dependency>
-      <groupId>ch.qos.logback</groupId>
-      <artifactId>logback-core</artifactId>
-      <version>1.2.3</version>
-  </dependency>
-  <!-- https://mvnrepository.com/artifact/org.slf4j/slf4j-api -->
-  <dependency>
-      <groupId>org.slf4j</groupId>
-      <artifactId>slf4j-api</artifactId>
-      <version>1.7.30</version>
-  </dependency>
-  <!-- https://mvnrepository.com/artifact/org.slf4j/slf4j-simple -->
-  <dependency>
-      <groupId>org.slf4j</groupId>
-      <artifactId>slf4j-simple</artifactId>
-      <version>1.7.30</version>
-      <scope>test</scope>
-  </dependency>
+     <!-- https://mvnrepository.com/artifact/ch.qos.logback/logback-classic -->
+     <dependency>
+        <groupId>ch.qos.logback</groupId>
+        <artifactId>logback-classic</artifactId>
+        <version>1.2.3</version>
+      
+     </dependency>
+     <!-- https://mvnrepository.com/artifact/ch.qos.logback/logback-core -->
+     <dependency>
+        <groupId>ch.qos.logback</groupId>
+        <artifactId>logback-core</artifactId>
+        <version>1.2.3</version>
+     </dependency>
+     <!-- https://mvnrepository.com/artifact/org.slf4j/slf4j-api -->
+     <dependency>
+        <groupId>org.slf4j</groupId>
+        <artifactId>slf4j-api</artifactId>
+        <version>1.7.30</version>
+     </dependency>
+  
    
   </dependencies>
   <build>
@@ -68,7 +62,7 @@
           <executable>C:\Program Files\Java\jdk1.8.0_231\bin\javac</executable>
         </configuration>
       </plugin>
-    </plugins>
+     </plugins>
   </build>
 
 </project>
