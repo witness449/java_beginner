@@ -1,8 +1,8 @@
 /build/
-/nbproject/
 /dist/
 /test/
 /build.xml
 /manifest.mf
 /target/
+/log.log
 
