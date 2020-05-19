@@ -11,7 +11,7 @@ package io.dima.javabeginner.domain;
  * @author Дмитрий
  */
 public class Column {
-    private String name;
+    private String name, colid;
     public Column (String name) {
         this.name = name;
     }
@@ -20,5 +20,14 @@ public class Column {
         return this.name;
         
     }
+    
+    public String getId() {
+        return this.colid;
+    }
+    
+    public void setId(String id){
+        this.colid=id;
+    }
+            
     
 }

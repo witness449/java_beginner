@@ -16,7 +16,7 @@ import org.slf4j.LoggerFactory;
  */
 public class Card {
     
-    private String title, description;
+    private String title, description, cid;
     private User assignee, creator;
     private Column column;
     private static final Logger LOG = LoggerFactory.getLogger(Card.class);
@@ -47,4 +47,23 @@ public class Card {
         LOG.info("Card [{}] was given a description [{}]", this.title, this.description);
         
     }
+    
+    public String getId (){
+        return this.cid;
+    }
+    
+    public void setId(String Id) {
+        this.cid=Id;
+    }
+    
+    public Column getColumn (){
+        return this.column;
+    }
+    
+    public User getAssignee(){
+        return this.assignee;
+    }
+            
+            
+            
 }
