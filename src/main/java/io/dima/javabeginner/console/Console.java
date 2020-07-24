@@ -9,6 +9,7 @@ package io.dima.javabeginner.console;
 import io.dima.javabeginner.domain.Card;
 import io.dima.javabeginner.domain.Column;
 import io.dima.javabeginner.domain.User;
+
 import java.util.Scanner;
 
 /**

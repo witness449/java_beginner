@@ -9,6 +9,11 @@ package io.dima.javabeginner.domain;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import io.dima.javabeginner.repository.UserRepository;
+import io.dima.javabeginner.repository.CardRepository;
+import io.dima.javabeginner.repository.ColumnRepository;
+
+import java.util.Scanner;
 
 /**
  *
@@ -63,7 +68,44 @@ public class Card {
     public User getAssignee(){
         return this.assignee;
     }
+    
+    public String getTitle (){
+        return this.title;
+    } 
+    
+    public static void createCard(Scanner in, String cardTitle, String columnTitle, User user, CardRepository cRep, ColumnRepository colRep, UserRepository uRep){
+        Column column=colRep.columnByName(columnTitle);
+        Card tmpCard=new Card (cardTitle,user, column);
+        System.out.println("You just created a card. Assign it to your friend.");
+        System.out.print("Email: ");
+        String assigneeEmail=in.nextLine();
+        tmpCard.assignTo(uRep.enterUser(assigneeEmail, in));
+        cRep.save(tmpCard);
+    }    
             
-            
+    public static void run(Scanner in, UserRepository uRep, CardRepository cRep, ColumnRepository colRep) {
+        System.out.println("First, log in!");
+        System.out.print("Email: ");
+        User currentUser = uRep.enterUser(in.nextLine(), in);
+        System.out.println("Hello " + currentUser.getName() + ", now you can create a task.");
+        for(;;) {
+            System.out.println("Choose 1 to create a card, 2 to show the list of cards, 0 to exit");
+            String command = in.nextLine();
+            if(command.equals("0"))
+                return;
+            else if(command.equals("1")){
+                System.out.print("Title: ");
+                String cardTitle=in.nextLine();
+                System.out.print("Column: ");
+                String columnTitle=in.nextLine();            
+                createCard(in, cardTitle, columnTitle, currentUser, cRep, colRep, uRep);
+            }
+            else if(command.equals("2"))
+                cRep.showCards(colRep);
+            else
+                System.out.println("The command was not recognized, try again");
+        }
+    }
+        
             
 }

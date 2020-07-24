@@ -6,6 +6,8 @@
 
 package io.dima.javabeginner.domain;
 
+import java.util.Scanner;
+
 /**
  *
  * @author Дмитрий
@@ -17,7 +19,7 @@ public class User {
     public User(String email) {
         this.email = email;
     }
-
+    
     public void setFirstName(String firstName) {
         this.firstName = firstName;
     }
@@ -30,10 +32,6 @@ public class User {
         return this.firstName+" "+this.lastName;
     }
 
-    @Override 
-    public String toString() {
-        return email;
-    }
     
     public String getId(){
         return this.uid;
@@ -42,4 +40,14 @@ public class User {
     public void setId(String id){
         this.uid=id;
     }
+    
+    public String getEmail(){
+        return this.email;
+    }
+    
+    @Override 
+    public String toString() {
+        return email;
+    }
+    
 }

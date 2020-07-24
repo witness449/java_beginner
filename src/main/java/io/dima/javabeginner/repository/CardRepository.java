@@ -28,16 +28,27 @@ public class CardRepository {
         assigneeCards.add(newCard);
     }
     
-    public List<Card> findByColumn(Column column) {
+    public  List<Card> findByColumn(Column column) {
         return cardByColumn.get(column.getId());
     }
     
     public List<Card> findByAssignee (User assignee){
         return cardByAssignee.get(assignee.getId());
     }
-            
-
-}
+    public void showCards(ColumnRepository colRep) {
+        for (Column column : colRep.findAllOrderedByPosition()) {
+            String line = column.getName() + ":\t";
+            if (this.findByColumn(column)!=null){
+                for (Card card : this.findByColumn(column))
+                    line += card.getTitle() + "(" + card.getAssignee().getName() + "), ";
+            }
+            else
+                line+="No cards in column "+column.getName()+"  ";
+            line = line.substring(0, line.length() - 2);
+            System.out.println(line);
+        }
+    }
+ }
 
 /**
  *

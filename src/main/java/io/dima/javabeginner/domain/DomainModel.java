@@ -6,6 +6,11 @@
 
 package io.dima.javabeginner.domain;
 
+import io.dima.javabeginner.repository.UserRepository;
+import io.dima.javabeginner.repository.CardRepository;
+import io.dima.javabeginner.repository.ColumnRepository;
+import java.util.Scanner;
+
 /**
  *
  * @author Дмитрий
@@ -26,9 +31,6 @@ public class DomainModel {
         c2.setDescription("Won't fix it, created by mistake");
         c2.moveTo(done);
         c2.assignTo(creator);
-
-
-}
- 
-    
-}
+        return;
+ }
+ }

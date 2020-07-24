@@ -16,15 +16,31 @@ import java.util.*;
  */
 public class UserRepository {
     
-    private final Map<String, User> UserById = new LinkedHashMap<>();
+    private final Map<String, User> userById = new LinkedHashMap<>();
    
     public void save(User newUser) {
         if(newUser.getId() != null)
             throw new IllegalArgumentException("The user already stored in DB: " + newUser.getId());
         newUser.setId(UUID.randomUUID().toString());
-        UserById.put(newUser.getId(), newUser);
+        userById.put(newUser.getId(), newUser);
           
     }
      
-    
+    public User enterUser(String val, Scanner in){
+        for (Map.Entry<String, User> entry : this.userById.entrySet()){
+            String key = entry.getKey();
+            User value = entry.getValue();
+            if(value.getEmail().equals(val))
+                return value;
+           }
+        System.out.print("First name: ");
+        String firstName=in.nextLine();
+        System.out.print("Last name: ");
+        String lastName=in.nextLine();
+        User tmp=new User(val);
+        tmp.setFirstName(firstName);
+        tmp.setLastName(lastName);
+        this.save(tmp);
+        return tmp;
+    }
 }

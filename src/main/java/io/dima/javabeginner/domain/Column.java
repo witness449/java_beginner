@@ -12,6 +12,7 @@ package io.dima.javabeginner.domain;
  */
 public class Column {
     private String name, colid;
+    
     public Column (String name) {
         this.name = name;
     }
@@ -28,6 +29,8 @@ public class Column {
     public void setId(String id){
         this.colid=id;
     }
-            
     
+  
+           
+   
 }
