@@ -89,7 +89,7 @@ public class Card {
         User currentUser = uRep.enterUser(in.nextLine(), in);
         System.out.println("Hello " + currentUser.getName() + ", now you can create a task.");
         for(;;) {
-            System.out.println("Choose 1 to create a card, 2 to show the list of cards, 0 to exit");
+            System.out.println("Choose 1 to create a card, 2 to show the list of cards, 3 to move card, 0 to exit");
             String command = in.nextLine();
             if(command.equals("0"))
                 return;
@@ -102,6 +102,22 @@ public class Card {
             }
             else if(command.equals("2"))
                 cRep.showCards(colRep);
+            else if(command.equals("3")){
+                System.out.print("Enter card title:");
+                String tmpCardTitle=in.nextLine();
+                Card tmpCard=cRep.findByName(tmpCardTitle);
+                System.out.print("Enter column source title: ");
+                String tmpColSourceName=in.nextLine();
+                if (tmpCard.getColumn().getName().equals(tmpColSourceName)){
+                    System.out.print("Enter column dest title: ");
+                    String tmpColDestName=in.nextLine();
+                    Column dest=colRep.findByName(tmpColDestName);
+                    cRep.moved(tmpCard, tmpCard.getColumn(), dest);
+                    tmpCard.moveTo(dest);
+                    }
+                else
+                    throw new IllegalArgumentException("There is not such card in DB");
+            }
             else
                 System.out.println("The command was not recognized, try again");
         }

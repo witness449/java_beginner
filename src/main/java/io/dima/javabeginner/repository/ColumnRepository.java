@@ -48,8 +48,19 @@ public class ColumnRepository {
             this.save(tmp);
             return tmp;
         }
-             
-        
+          
+    }
+    
+    public Column findByName(String name){
+        Column tmp = null;
+        for (Map.Entry<String, Column> entry : this.сolumnById.entrySet()){
+            if (name.equals(entry.getValue().getName())){
+                tmp=entry.getValue();
+            }
+        }
+       if (tmp==null)
+            throw new IllegalArgumentException("There is not such column in DB");
+        return tmp;
     }
     
 }

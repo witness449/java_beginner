@@ -35,6 +35,19 @@ public class CardRepository {
     public List<Card> findByAssignee (User assignee){
         return cardByAssignee.get(assignee.getId());
     }
+    
+    public Card findByName(String name){
+        Card tmp = null;
+        for (Map.Entry<String, Card> entry : this.cardById.entrySet()){
+            if (name.equals(entry.getValue().getTitle())){
+                tmp=entry.getValue();
+            }
+        }
+        if (tmp==null)
+            throw new IllegalArgumentException("There is not such card in DB");
+        return tmp;
+    }
+    
     public void showCards(ColumnRepository colRep) {
         for (Column column : colRep.findAllOrderedByPosition()) {
             String line = column.getName() + ":\t";
@@ -48,6 +61,15 @@ public class CardRepository {
             System.out.println(line);
         }
     }
+    
+    public void moved(Card card, Column source, Column dest){
+        List<Card> sourcelist=this.cardByColumn.get(source.getId());
+        List<Card> destlist=this.cardByColumn.get(dest.getId());
+        sourcelist.remove(card);
+        destlist.add(card);            
+    }
+            
+    
  }
 
 /**
